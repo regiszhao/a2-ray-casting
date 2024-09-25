@@ -13,6 +13,8 @@
 #include <memory>
 #include <limits>
 #include <functional>
+#include <fstream>
+#include <direct.h>
 
 
 int main(int argc, char * argv[])
@@ -33,7 +35,18 @@ int main(int argc, char * argv[])
   Camera camera;
   std::vector< std::shared_ptr<Object> > objects;
   // Read a camera and scene description from given .json file
-  read_json(argc<=1?"../data/sphere-and-plane.json":argv[1],camera,objects);
+  //read_json(argc<=1?"../../../data/sphere-and-plane.json":argv[1],camera,objects);
+  //read_json(argc<=1?"../../../data/triangle.json":argv[1],camera,objects);
+  read_json(argc<=1?"../../../data/bunny.json":argv[1],camera,objects);
+  //read_json(argc<=1?"../../../data/two-spheres-and-plane.json":argv[1],camera,objects);
+  //read_json(argc<=1?"../../../data/sphere-packing.json":argv[1],camera,objects);
+  //read_json(argc<=1?"../../../data/inside-a-sphere.json":argv[1],camera,objects);
+
+  // what are the objects
+  //for (auto i = objects.begin(); i != objects.end(); ++i) {
+  //    std::cout << "hello?";
+  //    std::cout << *i << " ";
+  //}
 
   int width = 640;
   int height = 360;
